@@ -3,6 +3,8 @@
   <PropertyGroup>
     <TargetFramework>netcoreapp2.0</TargetFramework>
     <RootNamespace>NFLFantasyFootballScoreboard</RootNamespace>
+<PublishWithAspNetCoreTargetManifest>false</PublishWithAspNetCoreTargetManifest>
+<AssemblyName>NFLFantasyFootballScoreboard</AssemblyName>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
