@@ -2,6 +2,6 @@
 
 Access the API here:
 
-https://nflfantasyfootballscoreboard.azurewebsites.net/scores/{week}
+https://nflfantasyfootballscoreboard.azurewebsites.net/scores/
 
-Replace {week} with the current Fantasy week.
+This returns my Fantasy team and opponent for the current week.
