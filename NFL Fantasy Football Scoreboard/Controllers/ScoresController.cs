@@ -20,15 +20,13 @@ namespace NFLFantasyFootballScoreboard.Controllers
         }
 
         // GET scores/5
-        [HttpGet("{week}")]
-        public Response Get(int week)
+        [HttpGet]
+        public Response Get()
         {
-
             return NFLFantasyAPIHelper.GetPlayerScores(
                 _apiSettings.NFLFantasyAPIURL, 
                 _myTeamSettings,
-                _oppTeamSettings,
-                week);
+                _oppTeamSettings);
         }
     }
 }

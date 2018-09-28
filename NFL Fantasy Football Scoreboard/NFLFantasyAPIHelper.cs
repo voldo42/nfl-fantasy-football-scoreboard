@@ -12,10 +12,10 @@ namespace NFLFantasyFootballScoreboard
         /// <summary>Gets data from the NFL Fantasy API and returns a response to the
         /// client containing the fantasy team and opposition team</summary>
         /// <returns>The response to the client</returns>
-        public static Response GetPlayerScores(string url, MyTeamSettings myTeamSettings, OppTeamSettings oppTeamSettings, int week)
+        public static Response GetPlayerScores(string url, MyTeamSettings myTeamSettings, OppTeamSettings oppTeamSettings)
         {
             // get all player stats from NFL Fantasy API
-            string data = GetDataFromNFL(url, week);
+            string data = GetDataFromNFL(url);
             FantasyStats stats = JsonConvert.DeserializeObject<FantasyStats>(data);
 
             // get players from settings
@@ -25,9 +25,9 @@ namespace NFLFantasyFootballScoreboard
             return CreateResponse(myPlayers, oppPlayers, stats);
         }
 
-        private static string GetDataFromNFL(string url, int week)
+        private static string GetDataFromNFL(string url)
         {
-            return new WebClient().DownloadString($"{url}&week={week}");
+            return new WebClient().DownloadString(url);
         }
 
         private static (List<string> myPlayers, List<string> oppPlayers) GetPlayersFromSettings(MyTeamSettings myTeamSettings, OppTeamSettings oppTeamSettings)
