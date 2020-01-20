@@ -14,6 +14,7 @@ namespace NFLFantasyFootballScoreboard
     {
         public static void Main(string[] args)
         {
+            // comment
             BuildWebHost(args).Run();
         }
 
